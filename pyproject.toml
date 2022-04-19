@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cryptodca-bot"
+version = "0.1.0"
+description = "A bot that attempts to buy cryptocurrency using a DCA method."
+authors = ["Route 1337 LLC <@route1337>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.27.1"
+pylint = "^2.13.5"
+pymongo = "^4.1.1"
+urllib3 = "^1.26.9"
+boto3 = "^1.21.42"
+argparse = "^1.4.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
