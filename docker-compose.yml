@@ -1,0 +1,39 @@
+#
+# Copyright 2022, Route 1337 LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: @ahrenstein
+#
+# See LICENSE
+
+version: '2'
+services:
+  bots-db:
+    container_name: bots-db
+    image: mongo:3.6
+    volumes:
+      - ./config/db-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: bots
+      MONGO_INITDB_ROOT_PASSWORD: dollarcostaverage
+    expose:
+      - 27017
+    restart: always
+  gemini-eth:
+    links:
+      - bots-db
+    container_name: gemini-eth
+    image: route1337/cryptodca-bot:latest
+    volumes:
+      - ./config:/config
+    command: [ "python", "-u", "/app/cryptodca_bot.py", "-c", "/config/gemini-config.json"]
+    restart: always
+  coinbase-eth:
+    links:
+      - bots-db
+    container_name: coinbase-eth
+    image: route1337/cryptodca-bot:latest
+    volumes:
+      - ./config:/config
+    command: [ "python", "-u", "/app/cryptodca_bot.py", "-c", "/config/coinbase-config.json"]
+    restart: always
