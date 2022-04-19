@@ -24,8 +24,7 @@ import mongo
 
 
 # Hard coded variables
-#CYCLE_MINUTES = 60
-CYCLE_MINUTES = 1 #TODO change this back after testing
+CYCLE_MINUTES = 15
 
 
 def read_bot_config(config_file: str) -> [str, float, int, bool, bool, str]:
