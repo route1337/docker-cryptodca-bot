@@ -24,8 +24,7 @@ import mongo
 
 
 # Hard coded variables
-#CYCLE_MINUTES = 60
-CYCLE_MINUTES = 1 #TODO change this back after testing
+CYCLE_MINUTES = 1
 
 
 def read_bot_config(config_file: str) -> [str, float, int, bool, bool, str]:
@@ -130,7 +129,7 @@ def gemini_exchange_cycle(config_file: str, debug_mode: bool) -> None:
             if config_params[5]:
                 post_to_sns(aws_config[0], aws_config[1], aws_config[2],
                             subject, message)
-            time.sleep(CYCLE_MINUTES * 60)
+            time.sleep(60 * 60)
             continue
         # Verify that there is enough money to transact, otherwise don't bother
         if not gemini_exchange.verify_balance(gemini_exchange_api_url,
