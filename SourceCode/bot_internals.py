@@ -123,7 +123,7 @@ def gemini_exchange_cycle(config_file: str, debug_mode: bool) -> None:
             gemini_exchange_api_url, config_params[0])
         if coin_current_price == -1:
             message = f"Coin price invalid for {config_params[0]}." \
-                      f" This could be an API issue. Ending cycle"
+                      f" This could be an API issue. Pausing for 1 hour."
             logging.error(message)
             subject = f"{config_params[5]} price invalid for {config_params[0]}"
             if config_params[5]:
