@@ -2,6 +2,11 @@ Crypto DCA Bot: Changelog
 =========================
 A list of all the changes made to this repo, and the bot it contains
 
+Version 0.1.2
+-------------
+
+1. If there are insufficient funds then sleep for 1hr instead of the cycle count
+
 Version 0.1.1
 -------------
 

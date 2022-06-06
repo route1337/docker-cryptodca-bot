@@ -129,6 +129,7 @@ def gemini_exchange_cycle(config_file: str, debug_mode: bool) -> None:
             if config_params[5]:
                 post_to_sns(aws_config[0], aws_config[1], aws_config[2],
                             subject, message)
+            # Sleep for one hour since this would be a very spammy notification
             time.sleep(60 * 60)
             continue
         # Verify that there is enough money to transact, otherwise don't bother
@@ -141,8 +142,8 @@ def gemini_exchange_cycle(config_file: str, debug_mode: bool) -> None:
                 post_to_sns(aws_config[0], aws_config[1], aws_config[2],
                             subject, message)
             logging.warning("%s", message)
-            # Sleep for the specified cycle interval then end the cycle
-            time.sleep(CYCLE_MINUTES * 60)
+            # Sleep for one hour since this would be a very spammy notification
+            time.sleep(60 * 60)
             continue
         # Check if the cost_average_period has passed
         clear_to_proceed = mongo.check_last_buy_date(config_params[5], mongo_db_connection,
@@ -203,8 +204,8 @@ def coinbase_pro_cycle(config_file: str, debug_mode: bool) -> None:
                 post_to_sns(aws_config[0], aws_config[1], aws_config[2],
                             subject, message)
             logging.warning("%s", message)
-            # Sleep for the specified cycle interval then end the cycle
-            time.sleep(CYCLE_MINUTES * 60)
+            # Sleep for one hour since this would be a very spammy notification
+            time.sleep(60 * 60)
             continue
         # Get the coin current price
         coin_current_price = coinbase_pro.get_coin_price \
