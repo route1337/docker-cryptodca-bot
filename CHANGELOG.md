@@ -2,6 +2,11 @@ Crypto DCA Bot: Changelog
 =========================
 A list of all the changes made to this repo, and the bot it contains
 
+Version 1.0.0
+-------------
+
+1. Breaking Change: Moving away from Docker Hub for GitHub Container Registry
+
 Version 0.1.2
 -------------
 
