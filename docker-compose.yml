@@ -23,7 +23,7 @@ services:
     links:
       - bots-db
     container_name: gemini-eth
-    image: route1337/cryptodca-bot:latest
+    image: ghcr.io/route1337/cryptodca-bot:latest
     volumes:
       - ./config:/config
     command: [ "python", "-u", "/app/cryptodca_bot.py", "-c", "/config/gemini-config.json"]
@@ -32,7 +32,7 @@ services:
     links:
       - bots-db
     container_name: coinbase-eth
-    image: route1337/cryptodca-bot:latest
+    image: ghcr.io/route1337/cryptodca-bot:latest
     volumes:
       - ./config:/config
     command: [ "python", "-u", "/app/cryptodca_bot.py", "-c", "/config/coinbase-config.json"]

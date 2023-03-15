@@ -3,6 +3,11 @@ Crypto DCA Bot
 This bot is designed to buy cryptocurrency on Coinbase Pro or Gemini ActiveTrader using a USD prefunded portfolio on a regular basis.
 (AKA Dollar Cost Averaging)
 
+Docker -> GHCR
+--------------
+Route 1337 LLC is moving to ghcr.io and away from Docker Hub.  
+This does mean that anything in the `route1337` namespace on Docker Hub should no longer be trusted, as it could be run by an attacker paying for the namespace.
+
 USE AT YOUR OWN RISK
 --------------------
 The primary authors of this bot run it full time against their personal Coinbase Pro and Gemini accounts,
