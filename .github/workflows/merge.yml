@@ -20,7 +20,7 @@ jobs:
       - name: Build the Docker image
         run: |
           echo "Building container..."
-          docker build -f Dockerfile -t route1337/cryptodca-bot:latest .
+          docker build -f Dockerfile -t ghcr.io/route1337/cryptodca-bot:latest .
           echo "Pushing container to Docker Hub..."
-          docker push route1337/cryptodca-bot:latest
+          docker push ghcr.io/route1337/cryptodca-bot:latest
           echo "Done!"
