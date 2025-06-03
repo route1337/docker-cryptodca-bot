@@ -1,3 +1,8 @@
+Deprecation Notice
+==================
+This repo is being archived as this project is no longer actively maintained. Route 1337 LLC has focused less on crypto in the last few years, in order to
+focus on our clients' cyber security needs.
+
 Crypto DCA Bot
 ==============
 This bot is designed to buy cryptocurrency on Coinbase Pro or Gemini ActiveTrader using a USD prefunded portfolio on a regular basis.
